@@ -53,3 +53,17 @@ type User = {
 
 const filterActiveUsers = (users: User[]): User[] =>
     users.filter((user) => user.isActive);
+
+interface Book {
+    title: string;
+    author: string;
+    publishedYear: number;
+    isAvailable: boolean;
+}
+
+const printBookDetails = (book: Book): void => {
+    const availability = book.isAvailable ? 'Yes' : 'No';
+    console.log(
+        `Title: ${book.title}, Author: ${book.author}, Published: ${book.publishedYear}, Available: ${availability}`
+    );
+};
