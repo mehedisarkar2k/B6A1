@@ -64,3 +64,44 @@ type User = {
 type UserKeys = keyof User;
 // 'name' | 'age'
 ```
+
+---
+
+## 3. Explain the difference between any, unknown, and never types in TypeScript
+
+### any
+
+- যেকোনো কিছুর মতো behave করে, জাভাস্ক্রিপ্টের মতো হয়ে যায়
+- type safety হারিয়ে যায়
+
+```ts
+let a: any = 'hello';
+a = 42; // কোনো সমস্যা নেই
+```
+
+### unknown
+
+- `any` এর মতো কিন্তু safer
+- ব্যবহার করার আগে type check করতে হয়
+
+```ts
+let b: unknown = 'hello';
+b = 42; // কোনো সমস্যা নেই
+```
+
+```ts
+if (typeof b === 'string') {
+  console.log(b.toUpperCase()); // এখন safe
+}
+```
+
+### never
+
+- এমন জিনিস যেটা কখনো ঘটবে না
+- যেমন error throw করে, infinite loop
+
+```ts
+function error(): never {
+  throw new Error('Something went wrong');
+}
+```
