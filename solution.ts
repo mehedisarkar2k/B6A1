@@ -100,3 +100,19 @@ const getUniqueValues = <T extends string | number>(
     return uniqueValues;
 };
 
+type Product = {
+    name: string;
+    price: number;
+    quantity: number;
+    discount?: number;
+};
+
+const calculateTotalPrice = (products: Product[]): number => {
+    return products.reduce((total, product) => {
+        const productTotal = product.price * product.quantity;
+        const discountAmount = product.discount
+            ? (productTotal * product.discount) / 100
+            : 0;
+        return total + (productTotal - discountAmount);
+    }, 0);
+};
