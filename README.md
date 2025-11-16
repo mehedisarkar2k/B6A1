@@ -105,3 +105,28 @@ function error(): never {
   throw new Error('Something went wrong');
 }
 ```
+
+---
+
+## 4. What is the use of enums in TypeScript? Provide an example of a numeric and string enum
+
+- `enum` দিয়ে constant values group করা যায়
+
+### Numeric Enum
+
+```ts
+enum Status {
+  Pending,
+  Approved,
+  Rejected,
+}
+```
+
+### String Enum
+
+```ts
+enum Roles {
+  Admin = 'admin',
+  User = 'user',
+}
+```
