@@ -43,3 +43,13 @@ const filterByRating = (items: Item[]): Item[] =>
     items.filter(
         (item) => item.rating >= 0 && item.rating <= 5 && item.rating >= 4
     );
+
+type User = {
+    id: number;
+    name: string;
+    email: string;
+    isActive: boolean;
+};
+
+const filterActiveUsers = (users: User[]): User[] =>
+    users.filter((user) => user.isActive);
