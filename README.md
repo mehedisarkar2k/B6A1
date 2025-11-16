@@ -48,3 +48,19 @@ type ApiResponse<T> = {
   error: string | null;
 };
 ```
+
+---
+
+## 2. What is the use of the keyof keyword in TypeScript? Provide an example
+
+`keyof` একটি object এর key গুলোকে union type হিসেবে দেয়।
+
+```ts
+type User = {
+  name: string;
+  age: number;
+};
+
+type UserKeys = keyof User;
+// 'name' | 'age'
+```
