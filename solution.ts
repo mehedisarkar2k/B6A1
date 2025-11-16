@@ -67,3 +67,36 @@ const printBookDetails = (book: Book): void => {
         `Title: ${book.title}, Author: ${book.author}, Published: ${book.publishedYear}, Available: ${availability}`
     );
 };
+
+const getUniqueValues = <T extends string | number>(
+    array1: T[],
+    array2: T[]
+): T[] => {
+    const uniqueValues: T[] = [];
+
+    const addIfNotExists = (value: T) => {
+        let exists = false;
+
+        for (let i = 0; i < uniqueValues.length; i++) {
+            if (uniqueValues[i] === value) {
+                exists = true;
+                break;
+            }
+        }
+
+        if (!exists) {
+            uniqueValues.push(value);
+        }
+    };
+
+    for (let i = 0; i < array1.length; i++) {
+        addIfNotExists(array1[i]);
+    }
+
+    for (let j = 0; j < array2.length; j++) {
+        addIfNotExists(array2[j]);
+    }
+
+    return uniqueValues;
+};
+
