@@ -33,3 +33,13 @@ class Person {
         return `Name: ${this.name}, Age: ${this.age}`;
     }
 }
+
+type Item = {
+    title: string;
+    rating: number;
+};
+
+const filterByRating = (items: Item[]): Item[] =>
+    items.filter(
+        (item) => item.rating >= 0 && item.rating <= 5 && item.rating >= 4
+    );
