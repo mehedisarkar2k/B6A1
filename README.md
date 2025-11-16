@@ -130,3 +130,27 @@ enum Roles {
   User = 'user',
 }
 ```
+
+---
+
+## 5. Provide an example of using union and intersection types in TypeScript
+
+### Union Type
+
+```ts
+let id: string | number;
+```
+
+### Intersection Type
+
+```ts
+type Person = {
+  name: string;
+};
+
+type Employee = {
+  salary: number;
+};
+
+type Staff = Person & Employee;
+```
